@@ -1,0 +1,54 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a routerLink="/" class="nav-logo" (click)="closeMobileMenu()">
+      <span class="logo-mark">JT</span>
+      <span class="logo-text">Jordan Toutsop</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="nav-links">
+      <li *ngFor="let item of navItems">
+        <a [routerLink]="item.route"
+           class="nav-link"
+           [class.active]="isActive(item.route)"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact: item.route === '/'}">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- CTA Button -->
+    <a routerLink="/contact" class="nav-cta btn btn-accent">
+      <i class="fa-solid fa-paper-plane"></i>
+      Me contacter
+    </a>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <ul>
+      <li *ngFor="let item of navItems; let i = index">
+        <a [routerLink]="item.route"
+           class="mobile-link"
+           [class.active]="isActive(item.route)"
+           (click)="closeMobileMenu()"
+           [style.animation-delay]="(i * 0.05) + 's'">
+          <i class="fa-solid" [class]="item.icon"></i>
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+    <a routerLink="/contact" class="btn btn-accent mobile-cta" (click)="closeMobileMenu()">
+      Me contacter
+    </a>
+  </div>
+</nav>

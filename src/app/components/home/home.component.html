@@ -1,0 +1,103 @@
+<section class="hero">
+  <div class="hero-bg">
+    <div class="bg-circle bg-circle-1"></div>
+    <div class="bg-circle bg-circle-2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <div class="container hero-content">
+    <!-- Left Column -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        Disponible pour de nouveaux projets
+      </div>
+
+      <h1 class="hero-title">
+        Bonjour, je suis<br>
+        <span class="hero-name">Jordan Toutsop</span>
+      </h1>
+
+      <div class="hero-role-wrapper">
+        <span class="role-prefix">—</span>
+        <span class="hero-role" [class.fade-in]="isVisible">{{ roles[currentRole] }}</span>
+      </div>
+
+      <p class="hero-desc">
+        Ingénieur logiciel avec plus de <strong>5 ans d'expérience</strong> en développement full stack.
+        Basé à Yaoundé/Douala, Cameroun. Je conçois des solutions robustes et scalables
+        pour des entreprises innovantes.
+      </p>
+
+      <div class="hero-actions">
+        <a routerLink="/experience" class="btn btn-primary">
+          Voir mes expériences
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a routerLink="/contact" class="btn btn-outline">
+          Me contacter
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/ToutsopDongmoJordan21" target="_blank" class="social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jordan-toutsop-6b2b731a1/" target="_blank" class="social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:jordantoutsop472@gmail.com" class="social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="hero-right">
+      <div class="photo-wrapper">
+        <div class="photo-ring"></div>
+        <div class="photo-frame">
+          <img src="assets/photo.jpg" alt="Jordan Toutsop" class="hero-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="photo-placeholder">
+            <span>JT</span>
+          </div>
+        </div>
+        <div class="floating-card card-exp">
+          <i class="fa-solid fa-briefcase"></i>
+          <div>
+            <strong>5+ ans</strong>
+            <span>d'expérience</span>
+          </div>
+        </div>
+        <div class="floating-card card-stack">
+          <i class="fa-solid fa-layer-group"></i>
+          <div>
+            <strong>Full Stack</strong>
+            <span>Développeur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="stats-row container">
+    <div class="stat-item" *ngFor="let stat of stats">
+      <span class="stat-number">{{ stat.number }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Banner -->
+<section class="tech-banner">
+  <div class="container">
+    <p class="tech-label">Stack technologique</p>
+    <div class="tech-grid">
+      <div class="tech-item" *ngFor="let skill of skills">
+        <i [class]="skill.icon" [style.color]="skill.color"></i>
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>

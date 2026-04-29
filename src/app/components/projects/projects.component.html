@@ -1,0 +1,70 @@
+<section class="section projects-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-code"></i> Projets</span>
+      <h2 class="section-title">Travaux Réalisés</h2>
+      <p class="section-subtitle">
+        Une sélection de projets livrés pour des clients et entreprises,
+        illustrant ma maîtrise des technologies modernes.
+      </p>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-row">
+      <button
+        *ngFor="let cat of categories"
+        class="filter-btn"
+        [class.active]="activeCategory === cat"
+        (click)="setCategory(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of filteredProjects"
+        [class.featured]="project.featured">
+
+        <div class="project-top">
+          <div class="project-icon">
+            <i class="fa-solid" [class]="project.icon"></i>
+          </div>
+          <a [href]="project.url" target="_blank" class="project-link-btn" *ngIf="project.url">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.description }}</p>
+
+        <div class="project-footer">
+          <div class="project-tags">
+            <span class="tech-tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+          <a [href]="project.url" target="_blank" class="project-visit" *ngIf="project.url">
+            Visiter <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub CTA -->
+    <div class="github-cta">
+      <div class="github-cta-content">
+        <i class="fa-brands fa-github cta-icon"></i>
+        <div>
+          <h3>Voir plus sur GitHub</h3>
+          <p>Retrouvez tous mes projets, expérimentations et contributions open source.</p>
+        </div>
+      </div>
+      <a href="https://github.com/ToutsopDongmoJordan21" target="_blank" class="btn btn-primary">
+        <i class="fa-brands fa-github"></i>
+        Visiter mon GitHub
+      </a>
+    </div>
+
+  </div>
+</section>

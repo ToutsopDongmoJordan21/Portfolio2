@@ -1,0 +1,168 @@
+<section class="section contact-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-envelope"></i> Contact</span>
+      <h2 class="section-title">Travaillons Ensemble</h2>
+      <p class="section-subtitle">
+        Un projet en tête ? Une opportunité à explorer ? N'hésitez pas à me contacter.
+        Je réponds généralement sous 24h.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Left: Info -->
+      <div class="contact-left">
+        <div class="availability-badge">
+          <span class="status-dot"></span>
+          Disponible pour des missions freelance & CDI
+        </div>
+
+        <div class="contact-cards">
+          <a
+            *ngFor="let info of contactInfo"
+            [href]="info.href || '#'"
+            class="contact-info-card"
+            [class.no-link]="!info.href">
+            <div class="info-icon">
+              <i class="fa-solid" [class]="info.icon"></i>
+            </div>
+            <div class="info-content">
+              <span class="info-label">{{ info.label }}</span>
+              <strong class="info-value">{{ info.value }}</strong>
+              <span class="info-sub" *ngIf="info.sub">{{ info.sub }}</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="socials-section">
+          <p class="socials-label">Retrouvez-moi sur</p>
+          <div class="socials-row">
+            <a
+              *ngFor="let s of socials"
+              [href]="s.href"
+              target="_blank"
+              class="social-card"
+              [attr.aria-label]="s.label">
+              <i [class]="s.icon" [style.color]="s.color"></i>
+              <span>{{ s.label }}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="contact-quote">
+          <i class="fa-solid fa-quote-left quote-mark"></i>
+          <p>
+            "Je crois que la technologie doit servir l'humain. Chaque projet est
+            une opportunité de créer quelque chose qui a un vrai impact."
+          </p>
+          <span>— Jordan Toutsop</span>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-right">
+        <div class="form-card">
+          <h3 class="form-title">Envoyer un message</h3>
+
+          <!-- Success State -->
+          <div class="success-state" *ngIf="isSubmitted">
+            <div class="success-icon">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h4>Message envoyé !</h4>
+            <p>Merci pour votre message. Jordan vous répondra très bientôt.</p>
+          </div>
+
+          <!-- Form -->
+          <form (ngSubmit)="onSubmit()" *ngIf="!isSubmitted" #contactForm="ngForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom complet *</label>
+                <input
+                  id="name"
+                  type="text"
+                  [(ngModel)]="formData.name"
+                  name="name"
+                  placeholder="Votre nom"
+                  required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  [(ngModel)]="formData.email"
+                  name="email"
+                  placeholder="votre@email.com"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input
+                id="subject"
+                type="text"
+                [(ngModel)]="formData.subject"
+                name="subject"
+                placeholder="Objet de votre message">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                [(ngModel)]="formData.message"
+                name="message"
+                rows="6"
+                placeholder="Décrivez votre projet ou votre demande..."
+                required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary submit-btn" [disabled]="isLoading">
+                <span *ngIf="!isLoading">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  Envoyer le message
+                </span>
+                <span *ngIf="isLoading" class="loading-text">
+                  <span class="spinner"></span>
+                  Envoi en cours...
+                </span>
+              </button>
+
+              <button type="button" class="btn btn-outline" (click)="sendEmail()">
+                <i class="fa-solid fa-envelope"></i>
+                Via Email
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <span class="logo-mark">JT</span>
+      <span>Jordan Toutsop Dongmo</span>
+    </div>
+    <p class="footer-copy">
+      © 2025 Jordan Toutsop Dongmo. Conçu avec <i class="fa-solid fa-heart"></i> en Angular 13.
+    </p>
+    <div class="footer-links">
+      <a routerLink="/">Accueil</a>
+      <a routerLink="/about">À Propos</a>
+      <a routerLink="/experience">Expériences</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+  </div>
+</footer>

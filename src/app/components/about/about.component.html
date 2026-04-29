@@ -1,0 +1,136 @@
+<section class="section about-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-user"></i> À Propos</span>
+      <h2 class="section-title">Qui suis-je ?</h2>
+      <p class="section-subtitle">
+        Un ingénieur logiciel passionné par la création de solutions numériques impactantes,
+        combinant expertise technique et vision stratégique.
+      </p>
+    </div>
+
+    <!-- Bio + Photo Grid -->
+    <div class="about-grid">
+      <div class="about-photo-col">
+        <div class="about-photo-wrap">
+          <img src="assets/photo.jpg" alt="Jordan Toutsop" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="photo-fallback">JT</div>
+          <div class="about-photo-badge">
+            <i class="fa-solid fa-map-marker-alt"></i>
+            Yaoundé / Douala, CM
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-col">
+        <h3 class="about-name">Jordan Toutsop Dongmo</h3>
+        <p class="about-role">Ingénieur en Génie Logiciel — Full Stack Developer</p>
+        <p class="about-bio">
+          Fort de plus de <strong>5 ans d'expérience</strong> dans le développement full stack,
+          je conçois et déploie des applications web et mobiles performantes pour des entreprises
+          au Cameroun et à l'international. Mon parcours couvre aussi bien le développement
+          frontend avec Angular que le backend avec Node.js, Java et Python.
+        </p>
+        <p class="about-bio">
+          En parallèle du développement, je maîtrise l'administration réseau et système,
+          ayant configuré des infrastructures complètes (CISCO, Windows Server, Active Directory, VPN)
+          pour des structures industrielles. Cette double compétence me permet d'avoir une vision
+          globale des systèmes d'information.
+        </p>
+
+        <div class="about-contacts">
+          <a href="tel:+237681409045" class="contact-chip">
+            <i class="fa-solid fa-phone"></i>
+            (+237) 681 409 045
+          </a>
+          <a href="mailto:jordantoutsop472@gmail.com" class="contact-chip">
+            <i class="fa-solid fa-envelope"></i>
+            jordantoutsop472@gmail.com
+          </a>
+          <a href="https://github.com/ToutsopDongmoJordan21" target="_blank" class="contact-chip">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/jordan-toutsop-6b2b731a1/" target="_blank" class="contact-chip">
+            <i class="fa-brands fa-linkedin-in"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-section">
+      <h3 class="sub-title">Compétences Techniques</h3>
+      <div class="skills-grid">
+        <div class="skill-bar-item" *ngFor="let skill of skills">
+          <div class="skill-bar-header">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-badge">{{ skill.category }}</span>
+            <span class="skill-percent">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Skills + Education + Language + Interests Grid -->
+    <div class="bottom-grid">
+      <!-- Soft Skills -->
+      <div class="info-card">
+        <h3 class="card-title"><i class="fa-solid fa-brain"></i> Soft Skills</h3>
+        <div class="soft-skills-list">
+          <div class="soft-skill-chip" *ngFor="let s of softSkills">
+            <i class="fa-solid" [class]="s.icon"></i>
+            {{ s.label }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="info-card">
+        <h3 class="card-title"><i class="fa-solid fa-graduation-cap"></i> Formation</h3>
+        <div class="edu-list">
+          <div class="edu-item" *ngFor="let e of education">
+            <div class="edu-dot"></div>
+            <div class="edu-content">
+              <strong>{{ e.degree }}</strong>
+              <span class="edu-school">{{ e.school }}</span>
+              <span class="edu-period">{{ e.period }}</span>
+              <p class="edu-desc">{{ e.desc }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="info-card">
+        <h3 class="card-title"><i class="fa-solid fa-globe"></i> Langues</h3>
+        <div class="lang-list">
+          <div class="lang-item" *ngFor="let l of languages">
+            <div class="lang-header">
+              <span class="lang-name">{{ l.name }}</span>
+              <span class="lang-level">{{ l.level }}</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill" [style.width.%]="l.percent"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="card-title" style="margin-top:2rem"><i class="fa-solid fa-heart"></i> Intérêts</h3>
+        <div class="interests-row">
+          <div class="interest-item" *ngFor="let i of interests">
+            <i class="fa-solid" [class]="i.icon"></i>
+            <span>{{ i.label }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

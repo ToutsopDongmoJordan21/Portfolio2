@@ -1,0 +1,105 @@
+<section class="section testimonials-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-comments"></i> Témoignages</span>
+      <h2 class="section-title">Ce qu'ils disent de moi</h2>
+      <p class="section-subtitle">
+        Retours de collègues, supérieurs et clients avec qui j'ai eu l'occasion de collaborer.
+      </p>
+    </div>
+
+    <!-- Main Testimonial Carousel -->
+    <div class="carousel-wrapper">
+      <div class="carousel-main" *ngIf="testimonials[activeIndex] as t">
+        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+
+        <p class="testimonial-message">{{ t.message }}</p>
+
+        <div class="testimonial-author">
+          <div class="author-avatar" [style.background]="t.color + '22'" [style.border-color]="t.color + '55'">
+            <span [style.color]="t.color">{{ t.initials }}</span>
+          </div>
+          <div class="author-info">
+            <strong class="author-name">{{ t.name }}</strong>
+            <span class="author-role">{{ t.role }}</span>
+            <span class="author-company">{{ t.company }}</span>
+            <div class="author-contacts" *ngIf="t.phone || t.email">
+              <span *ngIf="t.phone"><i class="fa-solid fa-phone"></i> {{ t.phone }}</span>
+              <span *ngIf="t.email"><i class="fa-solid fa-envelope"></i> {{ t.email }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="carousel-controls">
+        <button class="ctrl-btn" (click)="prev()"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="dots">
+          <button
+            class="dot"
+            *ngFor="let t of testimonials; let i = index"
+            [class.active]="activeIndex === i"
+            (click)="select(i)">
+          </button>
+        </div>
+        <button class="ctrl-btn" (click)="next()"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Testimonial Cards Grid -->
+    <div class="testimonials-grid">
+      <div
+        class="testi-mini-card"
+        *ngFor="let t of testimonials; let i = index"
+        [class.active]="activeIndex === i"
+        (click)="select(i)">
+        <div class="mini-avatar" [style.background]="t.color + '22'" [style.border-color]="t.color + '55'">
+          <span [style.color]="t.color">{{ t.initials }}</span>
+        </div>
+        <div class="mini-info">
+          <strong>{{ t.name }}</strong>
+          <span>{{ t.role }}</span>
+          <span class="mini-company">{{ t.company }}</span>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star" *ngFor="let s of [1,2,3,4,5]"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- References Banner -->
+    <div class="references-banner">
+      <div class="ref-header">
+        <i class="fa-solid fa-address-book"></i>
+        <h3>Références disponibles sur demande</h3>
+      </div>
+      <div class="ref-list">
+        <div class="ref-item">
+          <div class="ref-avatar" style="background:#6366F122; border-color:#6366F155">
+            <span style="color:#6366F1">SL</span>
+          </div>
+          <div class="ref-info">
+            <strong>SOP DEFFO Lionel Landry</strong>
+            <span>Coordinator – Dept of Computer Engineering</span>
+            <a href="tel:+237651305659"><i class="fa-solid fa-phone"></i> (+237) 651305659</a>
+            <a href="mailto:lsopdeffo@yahoo.com"><i class="fa-solid fa-envelope"></i> lsopdeffo@yahoo.com</a>
+          </div>
+        </div>
+        <div class="ref-divider"></div>
+        <div class="ref-item">
+          <div class="ref-avatar" style="background:#05966922; border-color:#05966955">
+            <span style="color:#059669">FS</span>
+          </div>
+          <div class="ref-info">
+            <strong>FOTSO Simplice</strong>
+            <span>Responsable Informatique – Biopharma SA</span>
+            <a href="tel:+237698708560"><i class="fa-solid fa-phone"></i> (+237) 698708560</a>
+            <a href="mailto:fonajosi@gmail.com"><i class="fa-solid fa-envelope"></i> fonajosi@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

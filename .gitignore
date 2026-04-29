@@ -1,0 +1,97 @@
+# =============================================
+#   .gitignore — Angular 13
+# =============================================
+
+# ── Dépendances ───────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+package-lock.json
+yarn.lock
+
+# ── Build & Compilation ───────────────────────
+tmp/
+out-tsc/
+bazel-out/
+
+# ── Cache Angular CLI (Angular 13+) ───────────
+.angular/
+.angular/cache/
+.sass-cache/
+connect.lock/
+
+# ── Couverture de tests ───────────────────────
+coverage/
+.nyc_output/
+
+# ── Environnements sensibles ──────────────────
+# Ne jamais versionner les fichiers de prod !
+src/environments/environment.staging.ts
+.env
+.env.*
+
+# ── Logs ──────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ── Système d'exploitation ────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ── IDEs & Éditeurs ───────────────────────────
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# IntelliJ / WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Emacs
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# ── Fichiers générés ──────────────────────────
+libpeerconnection.log
+testem.log
+/typings
+*.js.map
+*.d.ts.map
+
+# ── Karma / Protractor (tests) ────────────────
+e2e/*.js
+e2e/*.map
+src/**/*.js
+src/**/*.js.map
+
+# ── Certificats SSL locaux ────────────────────
+*.pem
+*.key
+*.crt
+
+# ── Divers ────────────────────────────────────
+.firebase/
+.firebaserc
+firebase.json

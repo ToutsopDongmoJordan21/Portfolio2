@@ -1,0 +1,70 @@
+<section class="section experience-section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Expériences</span>
+      <h2 class="section-title">Mon Parcours Professionnel</h2>
+      <p class="section-subtitle">
+        Plus de 5 ans d'expériences variées, du développement full stack
+        à l'administration réseau, en passant par l'intelligence artificielle.
+      </p>
+    </div>
+
+    <div class="exp-layout">
+      <!-- Sidebar -->
+      <div class="exp-sidebar">
+        <div
+          class="exp-tab"
+          *ngFor="let exp of experiences; let i = index"
+          [class.active]="activeIndex === i"
+          (click)="selectExperience(i)"
+          [style.--tab-color]="exp.color">
+          <div class="tab-indicator" [style.background]="exp.color"></div>
+          <div class="tab-content">
+            <span class="tab-company">{{ exp.company }}</span>
+            <span class="tab-period">{{ exp.period }}</span>
+          </div>
+          <i class="fa-solid fa-chevron-right tab-arrow"></i>
+        </div>
+      </div>
+
+      <!-- Detail Panel -->
+      <div class="exp-detail" *ngIf="experiences[activeIndex] as exp">
+        <div class="detail-header">
+          <div class="detail-header-top">
+            <div class="company-badge" [style.background]="exp.color + '22'" [style.border-color]="exp.color + '55'">
+              <span [style.color]="exp.color">{{ exp.company.charAt(0) }}</span>
+            </div>
+            <div class="detail-meta">
+              <h3 class="detail-role">{{ exp.role }}</h3>
+              <p class="detail-company">{{ exp.company }}</p>
+              <div class="detail-tags">
+                <span class="badge"><i class="fa-solid fa-calendar-alt"></i> {{ exp.period }}</span>
+                <span class="badge"><i class="fa-solid fa-location-dot"></i> {{ exp.location }}</span>
+                <span class="badge badge-accent"><i class="fa-solid fa-briefcase"></i> {{ exp.type }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h4 class="highlights-title">Missions & Réalisations</h4>
+        <ul class="highlights-list">
+          <li *ngFor="let h of exp.highlights" class="highlight-item">
+            <span class="highlight-dot" [style.background]="exp.color"></span>
+            {{ h }}
+          </li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h4 class="tech-title">Technologies utilisées</h4>
+        <div class="tech-tags">
+          <span class="tech-tag" *ngFor="let t of exp.technologies">{{ t }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
