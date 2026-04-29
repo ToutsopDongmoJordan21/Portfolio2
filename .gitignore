@@ -26,7 +26,6 @@ coverage/
 
 # ── Environnements sensibles ──────────────────
 # Ne jamais versionner les fichiers de prod !
-src/environments/environment.staging.ts
 .env
 .env.*
 
