@@ -24,45 +24,81 @@ export class ProjectsComponent {
       title: 'JonalePay',
       description: 'Plateforme de paiement en ligne sécurisée, offrant des solutions de transactions digitales pour les utilisateurs en Afrique.',
       url: 'https://jonalepay.net/accueil',
-      tags: ['Angular', 'Node.js', 'Fintech'],
+      tags: ['Angular', 'Node.js', 'Firebase'],
       category: 'Fintech',
       icon: 'fa-credit-card',
-      featured: true
+      featured: false
     },
     {
       title: 'CheckTatoo',
-      description: 'Plateforme dédiée à l\'univers du tatouage — découverte d\'artistes, booking et portfolios visuels.',
+      description: 'Plateforme de certification de conformité de ENEO, DGI, CAMWATER.',
       url: 'https://www.checktatoo.com/fr/',
-      tags: ['Angular', 'REST API', 'UX/UI'],
+      tags: ['WINDEV', 'WEBDEV', 'WinDev Mobile', 'HFSQL', 'ALM', 'Méthodes Agiles'],
       category: 'Web',
-      icon: 'fa-pen-nib',
-      featured: true
+      icon: 'fa-fingerprint',
+      featured: false
     },
     {
-      title: 'LaZone Shop',
-      description: 'Boutique e-commerce moderne avec gestion de catalogue, panier d\'achat et paiement intégré.',
-      url: 'https://lazoneshop.com/',
-      tags: ['E-commerce', 'Angular', 'SQL'],
+      title: 'Iziway',
+      description: 'Marketplace en ligne proposant smartphones, tablettes et électroménager avec livraison dans tout le Cameroun.',
+      url: 'https://iziway.cm/',
+      tags: ['Vue.js', 'Laravel', 'PostgreSQL'],
       category: 'E-commerce',
-      icon: 'fa-shopping-bag',
-      featured: true
-    },
-    {
-      title: 'CoinAfrique Cameroun',
-      description: 'Contribution au développement de la plateforme d\'annonces leader en Afrique, section Cameroun.',
-      url: 'https://cm.coinafrique.com/',
-      tags: ['Mobile', 'Web', 'Angular'],
-      category: 'Mobile',
       icon: 'fa-mobile-alt',
       featured: false
     },
     {
-      title: 'GitHub Portfolio',
-      description: 'Dépôt public regroupant mes projets open source, expérimentations et contributions diverses.',
-      url: 'https://github.com/ToutsopDongmoJordan21',
-      tags: ['Open Source', 'Python', 'Angular'],
+      title: 'Durrell Market',
+      description: 'Marketplace multivendeurs : les PME camerounaises créent leur boutique en ligne en 10 minutes.',
+      url: 'https://durrellmarket.com/',
+      tags: ['PHP', 'Laravel', 'MySQL'],
+      category: 'E-commerce',
+      icon: 'fa-shop',
+      featured: false
+    },
+    {
+      title: 'Djoolah',
+      description: 'Site d\'achat et de vente en ligne avec large catalogue produits, livraison à domicile en moins de 24h.',
+      url: 'https://djoolah.com/',
+      tags: ['React', 'Node.js', 'Firebase'],
+      category: 'E-commerce',
+      icon: 'fa-box',
+      featured: false
+    },
+    {
+      title: 'ISNOV ERP',
+      description: 'ERP de gestion intégrée africain : CRM, RH, comptabilité, production, BI. Conçu pour les PME/PMI camerounaises.',
+      url: 'https://isnov.com/',
+      tags: ['Java', 'Angular', 'PostgreSQL'],
+      category: 'Fintech',
+      icon: 'fa-cogs',
+      featured: false
+    },
+    {
+      title: 'LocalHost Digital',
+      description: 'Agence digitale basée à Douala proposant des solutions ERP, CRM et gestion commerciale pour PME camerounaises.',
+      url: 'https://localhost-digital.com/',
+      tags: ['WordPress', 'WooCommerce', 'PHP'],
+      category: 'Fintech',
+      icon: 'fa-server',
+      featured: false
+    },
+    {
+      title: 'Mutations',
+      description: 'Quotidien d\'information indépendant : actualités nationales, analyses politiques et économiques du Cameroun.',
+      url: 'https://www.mutations.cm/',
+      tags: ['Angular', 'Node.js', 'MySQL'],
       category: 'Web',
-      icon: 'fa-code-branch',
+      icon: 'fa-pen-nib',
+      featured: false
+    },
+    {
+      title: 'Investir au Cameroun',
+      description: 'Portail d\'actualités économiques et financières : opportunités d\'investissement, marchés publics et business au Cameroun.',
+      url: 'https://www.investiraucameroun.com/',
+      tags: ['Angular', 'PHP', 'PostgreSQL'],
+      category: 'Mobile',
+      icon: 'fa-chart-bar',
       featured: false
     }
   ];

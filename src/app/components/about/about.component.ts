@@ -44,7 +44,7 @@ export class AboutComponent {
   languages = [
     { name: 'Français', level: 'Natif', percent: 100 },
     { name: 'Anglais', level: 'Courant', percent: 85 },
-    { name: 'Allemand', level: 'Notions', percent: 35 }
+    { name: 'Allemand', level: 'Notions', percent: 20 }
   ];
 
   interests = [
